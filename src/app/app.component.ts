@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   //imports: [RouterOutlet,NgFor],
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true
@@ -15,16 +13,16 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'TodList';
 
-  task: string = '';
-  tasks: {id:number, name:string}[] =[];
+  task: string = "";
+  tasks: { id: number, name: string }[] = [];
 
   addTask() {
     if (this.task.trim() === "") return;
-        this.tasks.push({id: this.tasks.length +1, name: this.task});
-        this.task = "";
+    this.tasks.push({ id: this.tasks.length + 1, name: this.task });
+    this.task = "";
   }
 
-  removeTask(id:number){
+  removeTask(id: number) {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }
