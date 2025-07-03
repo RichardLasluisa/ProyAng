@@ -4,19 +4,18 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  //imports: [RouterOutlet,NgFor],
   imports: [FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true
 })
 export class AppComponent {
-  title = 'TodList';
-
+ 
   task: string = "";
   tasks: { id: number, name: string }[] = [];
 
   addTask() {
+    //console.log("Hola" + this.name);
     if (this.task.trim() === "") return;
     this.tasks.push({ id: this.tasks.length + 1, name: this.task });
     this.task = "";
@@ -26,4 +25,5 @@ export class AppComponent {
     this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }
+
 

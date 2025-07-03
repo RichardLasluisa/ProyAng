@@ -1,17 +1,17 @@
 <main class="main">
   <div class="content">
-      <h1>Hello, {{ title }}</h1>
+      <h1>Hello,</h1>
       <p>Congratulations! Your app is </p>
   </div>
   <div class="content">
       <input type="text" [(ngModel)]="task" placeholder="Agregar nueva tarea">
       <br>
-      <button (clic)="addTask()">Añadir</button>
+      <button (click)="addTask()">Añadir</button>
 
       @for(task of tasks; track task.id){
-        <ul calss="tasks">
-          <li {{ task.id }}></li>
-          <li>{{ task.name }}</li>
+        <ul>
+          <li> {{ task.id }} </li>
+          <li>{{ task.name }} </li>
           <li><button (click)="removeTask(task.id)">Delete</button></li>
         </ul>
       }
