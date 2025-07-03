@@ -1,0 +1,27 @@
+<main class="main">
+  <div class="content">
+      <h1>Hello, {{ title }}</h1>
+      <p>Congratulations! Your app is running. 🎉</p>
+  </div>
+  <div class="content">
+      <input type="text" [ngModel]="task" placeholder="Agregar nueva tarea"/>
+      <br>
+      <button (clic)="addTask()"></button>
+
+      <ul>
+        <li *ngFor="let task of tasks">
+          {{ task.name }}
+        </li>
+      </ul>
+      @for(task of tasks; track task.id){
+        <ul class="tasks">
+          <li {{task.id}}></li>
+          <li>{{task.name}}</li>
+          
+        </ul>
+
+      }
+  </div>
+</main>
+
+<router-outlet />
